@@ -1,0 +1,31 @@
+{
+  "name": "hello-world-angular",
+  "version": "1.0.0",
+  "description": "\"Just trying to run typescript\"",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "akimov.infotech",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "^7.2.4",
+    "@angular/compiler": "^7.2.4",
+    "@angular/core": "^7.2.4",
+    "@angular/platform-browser": "^7.2.4",
+    "@angular/platform-browser-dynamic": "^7.2.4",
+    "core-js": "^2.6.4",
+    "rxjs": "^6.4.0",
+    "zone.js": "^0.8.29"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.13.1",
+    "@angular/cli": "^7.3.1",
+    "@angular/compiler-cli": "^7.2.4",
+    "@angular/language-service": "^7.2.4",
+    "@types/node": "^10.12.24",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
+}
