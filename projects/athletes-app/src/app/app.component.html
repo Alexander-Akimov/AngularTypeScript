@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <input type="text" [(ngModel)]="title" />
+  <input type="text" [value]="title" />
+  <h1 [style.color]="color">This is red</h1>
+  <h1 [innerText]="title"></h1>
+  <button (click)="setColor()">Change Color</button>
+</div>
+<h1>Kona Ironman Top 5 men</h1>
+
+<app-athlete-list (selected)="showDetails($event)">Loading athlete list…</app-athlete-list>
+
+You selected: {{selectedAthlete}}
+
+<button (click)="addItem()">Add Item to list</button>
+<button (click)="removeItem()">Remove Item from list</button>
+
+<ul>
+  <li *ngFor="let item of array">{{item.name}}</li>
+</ul>
+
+<router-outlet></router-outlet>
