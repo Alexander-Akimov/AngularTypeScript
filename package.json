@@ -12,8 +12,11 @@
     "@angular/common": "^7.2.4",
     "@angular/compiler": "^7.2.4",
     "@angular/core": "^7.2.4",
+    "@angular/forms": "^7.2.4",
+    "@angular/http": "^7.2.4",
     "@angular/platform-browser": "^7.2.4",
     "@angular/platform-browser-dynamic": "^7.2.4",
+    "@angular/router": "^7.2.4",
     "core-js": "^2.6.4",
     "rxjs": "^6.4.0",
     "zone.js": "^0.8.29"
@@ -26,6 +29,6 @@
     "@types/node": "^10.12.24",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
-    "typescript": "^3.3.3"
+    "typescript": "^3.2.4"
   }
 }

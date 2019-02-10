@@ -1,33 +1,186 @@
 {
-    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-    "version": 1,
-    "newProjectRoot": "projects",
-    "projects": {
-      "my-app": {
-        "root": "",
-        "sourceRoot": "src",
-        "projectType": "application",
-        "prefix": "app",
-        "schematics": {
-          "@schematics/angular:component": {
-            "styleext": "less"
-          }
-        },
-        "architect": {
-          "build": {
-            "builder": "@angular-devkit/build-angular:browser",
-            "options": {
-              "outputPath": "dist/my-app",
-              "index": "src/index.html",
-              "main": "src/main.ts",
-              "polyfills": "src/polyfills.ts",
-              "tsConfig": "tsconfig.json",
-              
-              "scripts": []
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "my-app": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "less"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/my-app",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.json",
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         }
       }
     },
-    "defaultProject": "my-app"
-  }
+    "athletes-app": {
+      "root": "projects/athletes-app/",
+      "sourceRoot": "projects/athletes-app/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/athletes-app",
+            "index": "projects/athletes-app/src/index.html",
+            "main": "projects/athletes-app/src/main.ts",
+            "polyfills": "projects/athletes-app/src/polyfills.ts",
+            "tsConfig": "projects/athletes-app/tsconfig.app.json",
+            "assets": [
+              "projects/athletes-app/src/favicon.ico",
+              "projects/athletes-app/src/assets"
+            ],
+            "styles": [
+              "projects/athletes-app/src/styles.css"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/athletes-app/src/environments/environment.ts",
+                  "with": "projects/athletes-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "athletes-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "athletes-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "athletes-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/athletes-app/src/test.ts",
+            "polyfills": "projects/athletes-app/src/polyfills.ts",
+            "tsConfig": "projects/athletes-app/tsconfig.spec.json",
+            "karmaConfig": "projects/athletes-app/karma.conf.js",
+            "styles": [
+              "projects/athletes-app/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/athletes-app/src/favicon.ico",
+              "projects/athletes-app/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/athletes-app/tsconfig.app.json",
+              "projects/athletes-app/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "athletes-app-e2e": {
+      "root": "projects/athletes-app-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/athletes-app-e2e/protractor.conf.js",
+            "devServerTarget": "athletes-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "athletes-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/athletes-app-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "my-app"
+}
