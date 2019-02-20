@@ -2,7 +2,7 @@
   "name": "hello-world-angular",
   "version": "1.0.0",
   "description": "\"Just trying to run typescript\"",
-  "main": "main.ts",
+  "main": "src/main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,7 +26,10 @@
     "@angular/cli": "^7.3.1",
     "@angular/compiler-cli": "^7.2.4",
     "@angular/language-service": "^7.2.4",
+    "@types/jasmine": "^3.3.9",
+    "@types/jasminewd2": "^2.0.6",
     "@types/node": "^10.12.24",
+    "protractor": "^5.4.2",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "typescript": "^3.2.4"

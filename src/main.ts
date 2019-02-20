@@ -8,7 +8,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
   selector: 'hello-world',
   template: '<h1>Hello {{ name }}!</h1>'
 })
-class HelloWorldComponent {
+export class HelloWorldComponent {
   name: string;
 
   constructor() {
