@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import { NgModule }      from '@angular/core';
+import { Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -18,9 +18,9 @@ export class HelloWorldComponent {
 
 // Module
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ HelloWorldComponent ],
-  bootstrap:    [ HelloWorldComponent ]
+  imports: [BrowserModule],
+  declarations: [HelloWorldComponent],
+  bootstrap: [HelloWorldComponent]
 })
 export class AppModule { }
 

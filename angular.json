@@ -323,7 +323,7 @@
           }
         }
       }
-    },
+    }
   },
   "defaultProject": "my-app"
 }
