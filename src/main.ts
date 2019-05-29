@@ -12,7 +12,7 @@ export class HelloWorldComponent {
   name: string;
 
   constructor() {
-    this.name = 'Angular';
+    this.name = 'Title from component ' + 'Angular';
   }
 }
 
