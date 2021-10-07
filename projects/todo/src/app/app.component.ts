@@ -6,14 +6,14 @@ import { Model, TodoItem } from "./model";
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  model = new Model();
+  model: Model = new Model();
   getName() {
     return this.model.user;
   }
   getTodoItems() {
-    return this.model.items.filter(item => !item.done);
+    return this.model.items.filter((item: TodoItem) => !item.done);
   }
-  addItem(newItem) {
+  addItem(newItem: string) {
     if (newItem != "") {
       this.model.items.push(new TodoItem(newItem, false));
     }

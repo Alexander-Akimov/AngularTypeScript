@@ -7,8 +7,8 @@ var model = {
 };
 
 export class Model {
-    user;
-    items;
+    user: string;
+    items: TodoItem[];
     constructor() {
         this.user = "Adam";
         this.items = [new TodoItem("Buy Flowers", false),
@@ -19,9 +19,9 @@ export class Model {
 }
 
 export class TodoItem {
-    action;
-    done;
-    constructor(action, done) {
+    action: string;
+    done: boolean;
+    constructor(action: string, done: boolean) {
         this.action = action;
         this.done = done;
     }
